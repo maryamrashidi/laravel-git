@@ -337,3 +337,16 @@ Route::get('session' , function (Request $request){
 
 });
 //یک تفییر ایجاد شد
+use Illuminate\Support\Facades;
+Route::prefix('fa')->group(function (){
+    App::setLocale('fa');
+//    $locale = App::getLocale();
+//    if(App::isLocale('fa')){
+//        dd('زبان فارسی شد');
+//    }
+    Route::get('message' , function (){
+        return view('message');
+    });
+
+});
+
